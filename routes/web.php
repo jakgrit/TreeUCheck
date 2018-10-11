@@ -31,7 +31,7 @@ Route::get('/', function (Request $request) {
 	sendMail
 */
 Route::post('send','mailController@send');
-Route::get('email','mailController@email');
+Route::get('email','mailController@email')->name('email');
 
 
 

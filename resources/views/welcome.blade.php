@@ -1,14 +1,7 @@
 @extends('default')
-
 @section('title', 'Home')
-
-
 @section('style')
-
-
 @endsection
-
-
 @section('content')
 
     <!-- menu -->

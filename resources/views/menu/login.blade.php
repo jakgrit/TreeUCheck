@@ -6,7 +6,7 @@
       <div class="w3-right w3-hide-small" style="margin-right:150px; margin-top:10PX;">
         <a href="{{ route('home') }}" class="w3-bar-item w3-button fonts1 " style="text-decoration: none; color:#00C7E8; font-size:18px;">หน้าแรก</a>
         <a href="{{ route('about') }}" class="w3-bar-item w3-button fonts1 " style="text-decoration: none; color:#00C7E8; font-size:18px;">เกี่ยวกับเรา</a>
-        <a href="" class="w3-bar-item w3-button fonts1 " style="text-decoration: none; color:#00C7E8; font-size:18px;">ผู้ติดต่อ</a>
+        <a href="{{ route('email') }}" class="w3-bar-item w3-button fonts1 " style="text-decoration: none; color:#00C7E8; font-size:18px;">ติดต่อเรา</a>
           <a href="#" class="w3-bar-item w3-button fonts1 dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" 
           aria-expanded="false" style="text-decoration: none; color:#ffffff; font-size:18px;">{{$name}}<span class="caret"></span></a>
           <ul class="dropdown-menu">

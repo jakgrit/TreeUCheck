@@ -11,8 +11,6 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	
-	
 	<style>
 	@yield('css')
 
@@ -129,7 +127,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true" ></i></span>
-                <input required type="text" class="form-control" name="user" id="name"  placeholder=""/>
+                <input required type="text" class="form-control" name="user"   placeholder=""/>
               </div>
             </div>
           </div>
@@ -139,7 +137,7 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
-                <input required type="Password" class="form-control" name="Pass" id="name"  placeholder=""/>
+                <input required type="Password" class="form-control" name="Pass"   placeholder=""/>
               </div>
             </div>
           </div>
@@ -225,28 +223,28 @@
 
 	@yield('js')
 
-	<script>
-		var slideIndex = 1;
-		showDivs(slideIndex);
+	// <script>
+	// 	var slideIndex = 1;
+	// 	showDivs(slideIndex);
 
-		function plusDivs(n) {
-			showDivs(slideIndex += n);
-		}
+	// 	function plusDivs(n) {
+	// 		showDivs(slideIndex += n);
+	// 	}
 
-		function showDivs(n) {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			if (n > x.length) {slideIndex = 1}    
-				if (n < 1) {slideIndex = x.length}
-					for (i = 0; i < x.length; i++) {
-						x[i].style.display = "none";  
-					}
-					x[slideIndex-1].style.display = "block";  
-				}
-	</script>
+	// 	function showDivs(n) {
+	// 		var i;
+	// 		var x = document.getElementsByClassName("mySlides");
+	// 		if (n > x.length) {slideIndex = 1}    
+	// 			if (n < 1) {slideIndex = x.length}
+	// 				for (i = 0; i < x.length; i++) {
+	// 					x[i].style.display = "none";  
+	// 				}
+	// 				x[slideIndex-1].style.display = "block";  
+	// 			}
+	// </script>
 
 
-	<script>
+	<!-- <script>
 				function myFunction() {
 					var x = document.getElementById("navDemo");
 					if (x.className.indexOf("w3-show") == -1) {
@@ -255,7 +253,7 @@
 						x.className = x.className.replace(" w3-show", "");
 					}
 				}
-	</script>
+	</script> -->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="{{asset('js/bootstrap.min.js')}}"></script>
