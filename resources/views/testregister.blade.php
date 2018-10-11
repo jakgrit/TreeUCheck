@@ -87,6 +87,8 @@
          <input required type= type="text" name="email" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1">
       </div>
 
+      <p id = "alertMail" class="fonts1" style="color:red; font-size:12px"></p>
+
        <div class="input-group" style="margin-top:20px;">
          <span class="input-group-addon" id="basic-addon1"><i class="fas fa-map-marked-alt"></i></i></span>
          <input required type= type="text" name="add" class="form-control" placeholder="ที่อยู่" aria-describedby="basic-addon1">
@@ -100,7 +102,7 @@
 
    </div>
 
-   <p id = "alertMail"></p>
+   
 
 
    <div class="fonts1" style="margin-top:20px;">
@@ -155,7 +157,7 @@
     console.log("Hello world!");
     var mail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     if(mail.test(frm.email.value) == false){
-      document.getElementById("alertMail").innerHTML = "อีเมลล์ไม่ถูกต้อง";
+      document.getElementById("alertMail").innerHTML = "E-mail ไม่ถูกต้อง*";
       console.log('สวัสดี');
     }else{
       console.log('ผิด');

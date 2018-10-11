@@ -81,7 +81,7 @@
 							</div>
 						</div>
 
-                        <p class="fonts1">ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง</p>
+                        <p class="fonts1" style="color:red; font-size:12px">ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง กรุณากรอกใหม่</p>
 
 						<button type="submit" style="width: 40% ;" class="btn btn-success fonts1">เข้าสู่ระบบ</button>
 			</form>
