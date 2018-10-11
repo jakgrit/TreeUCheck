@@ -14,7 +14,7 @@ class checkController extends Controller
 
    public function index($id,Request $request){
        
-       $name = $request->session()->get('name');
+        $name = $request->session()->get('name');
         $collection = (new Mongo)->TreeUCheck->announce;
         $collection2 = (new Mongo)->TreeUCheck->register;
         $item = $collection->findOne(array('_id' => new ObjectID($id))); 

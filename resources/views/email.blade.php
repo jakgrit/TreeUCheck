@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<style>
 	@yield('css')
-
+	
 	@import url('https://fonts.googleapis.com/css?family=Prompt');
 	.fonts1{
 		font-family:"Prompt", Times,  sans-serif;
@@ -38,69 +38,127 @@
 	}
 
 	#map {
-		margin-top:20px;
-		height: 200px;
-		width: 300px;
-		-webkit-border-radius: 10px;
-		-moz-border-radius: 10px;
-		border-radius: 10px;
+		
+		height: 325px;
+		width: 100%;
 	}
-
-
 </style>
 
+
+	@yield('script')
+
 </head>
-<body style="background-image: url('{{asset('img/1607.jpg')}}');  background-size: cover;background-repeat: no-repeat;  background-attachment: fixed; ">
-	<div>
-		@if(Session::has('user'))
-		@include('menu.login')
-		@else
-		@include('menu.not-login')
-		@endif
-	</div>  
-	<div class="fonts1" style="margin-top: 100px; color: #FFF">
-		<h1 style="color: #fff; text-align: center;">ติดต่อสอบถาม</h1>
-
-    <!-- menu --><div class="fonts1" style="font-size:15px; margin-top:20px;">
-           Email<input type="text" id="fname" name="email" placeholder="" style="width:500px; margin-left:20px; height:30px;">
-         </div>
-
-  
-      <div class="row fonts1" style="text-align: center; padding-top: 50px";>
-        <div class="col-md-6">
-          <form action="send" method="post">
-			{{csrf_field()}}
 
 
+<body style="background-image: url('{{asset('img/1607.png')}}');  background-size: cover;background-repeat: no-repeat;  background-attachment: fixed;">
+<!-- nav -->
+
+@if(Session::has('user'))
+	@include('menu.login')
+@else
+	@include('menu.not-login')
+@endif
+  <!-- nav -->
+  <center> 
+  <div class="row" style="width: 70%;margin-top:100px; ">
+	 <h1 class="fonts1" style="color: #FFF;">ติดต่อสอบถามข้อมูลเพิ่มเติม</h1>
+	 <hr>
+	 	<form action="send" method="post">
+		 	{{csrf_field()}}
+  			<div class="col-md-6">
+			  <div class="fonts1" style="color:#fff; text-align:left; font-size:18px">กรุณากรอกข้อมูลเพื่อให้เจ้าหน้าที่ติดต่อกลับ</div>
+			  <div class="fonts1" style="color:#00C7E8; text-align:left;">ติดต่อเราผ่านทาง Email ( เจ้าหน้าที่จะติดต่อกลับภายใน 24 ชั่วโมง )</div>
+			  
+			  <br>
+			  	<div class="form-group  has-feedback fonts1" style="color: #FFF; text-align:left" >
+					หัวข้อเรื่อง
+			  		<div class="form-group  has-feedback">
+				  		<input type="text" name = "head" class="form-control fonts1" style="padding-left : 30px" id="inputSuccess2" placeholder="" aria-describedby="inputSuccess2Status">
+  						<span id="inputSuccess2Status" class="sr-only">(success)</span>
+  						<span style="left:0px; color: #8e8e8e;"  class="form-control-feedback" aria-hidden="true"><i class="fas fa-heading"></i></span>
+  					</div>
+			 	</div>
+
+				<div class="form-group  has-feedback fonts1" style="color: #FFF; text-align:left" >
+					E-mail ติดต่อกลับ
+			  		<div class="form-group  has-feedback">
+				  		<input type="text" name = "to" class="form-control fonts1" style="padding-left : 30px" id="inputSuccess2" placeholder="" aria-describedby="inputSuccess2Status">
+  						<span id="inputSuccess2Status" class="sr-only">(success)</span>
+  						<span style="left:0px; color: #8e8e8e;"  class="form-control-feedback" aria-hidden="true"><i class="fas fa-mail-bulk"></i></span>			
+  					</div>
+			 	</div>
 
 
-			
-			to: <input type="text" name="to">
-			message: <textarea name="message" id="" cols="30" rows="10"></textarea>
-			<input type="submit" value="Send">
+				<div class="form-group  has-feedback fonts1" style="color: #FFF; text-align:left" >
+				  	ข้อความ :
+  					<textarea type="text" name = "message" class="form-control fonts1" style="width:100%; height:300px; resize: vertical;" id="inputSuccess2"  aria-describedby="inputSuccess2Status"></textarea>
+  					<span id="inputSuccess2Status" class="sr-only">(success)</span>
+  				</div>
+				  <div class="fonts1">
+				  	<button type="button" class="btn btn-primary">ยกเลิก</button>
+					<button type="submit" class="btn btn-success">ส่ง</button>
+				  </div>
+  			</div>
 		</form>
-
-
-        </div>
-
-
-    
-       <div class="col-md-6">  
-         
-
-
-        </div>
-
-      </div>
-
-
-
-
-
-
 		
-	</div>
 
+
+  			<div class="col-md-6" >
+			  <div class="fonts1" style="font-size:24px;  color:#fff; text-align:left" >ติดต่อ<span style="color:#00C7E8;">เรา</span></div>
+			  <div  class="fonts1" style="font-size:12px; color:#fff; text-align:left" >สำหรับการสอบถามข้อมูลทั่วไป สามารถติดต่อศูนย์บริการคอลเซ็นเตอร์ของเราได้ที่ </div>
+
+			  <div class="fonts1" style="color:#fff; text-align:left; padding-top:20px;">
+	
+
+			  <span class="fa fa-map-marker" style="font-size:16px; padding-right:20px;"></span>
+			  		
+					Adderss : 24/66 สุขสรรค์วิลล่า 1 ถ.ลงหาดบางแสน ซ.12 ต.แสนสุข อ.เมือง
+					<div style="padding-top:10px;"></div>
+					<span class="fa fa-phone" style="font-size:16px; padding-right:20px;"></span>
+					Phone : 097-1949445
+					<div style="padding-top:10px;"></div>
+					<span class="fa fa-envelope" style="font-size:16px; padding-right:20px;"></span>
+					E-mail : Xhoa_2541@hotmail.com
+				</div>
+				<hr>
+			  <div id="map"></div>
+			
+			</div>
+
+
+				
+		</div>
+	
+  
+</div>
+
+
+</center>
+
+
+
+
+	<script>
+					function initMap() {
+						var uluru = {lat: 13.289386, lng: 100.930221};
+						var map = new google.maps.Map(document.getElementById('map'), {
+							zoom: 10,
+							center: uluru
+						});
+						var marker = new google.maps.Marker({
+							position: uluru,
+							map: map
+						});
+					}
+				</script>
+				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSri6xDweSFsQ2ELKMOxNgmBmAgQH-xmM&callback=initMap">
+				</script>
+  				
+
+
+	
+
+	
 
 
 
@@ -119,5 +177,7 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
 
-</body>
+
+
+	</body>
 </html>

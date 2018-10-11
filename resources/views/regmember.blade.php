@@ -21,7 +21,7 @@
       <div class="fonts1" style="font-size:50px; padding-top:20px;">ระบบสมัครสมาชิก</div>
 
 
-       <form action="{{ route('regMember') }}" method="post">
+       <form id="formSendEmail" name= "frm" action="{{ route('regMember') }}" method="post">
         {{ csrf_field() }}
         <div style="width:40%">
         
@@ -40,8 +40,10 @@
 
            <div class="input-group" style="margin-top:20px;">
          <span class="input-group-addon" id="basic-addon1"><i class="far fa-address-card"></i></span>
-         <input required type="text" id="fname" name="sur" class="form-control" placeholder="นามสกุล" aria-describedby="basic-addon1">
+         <input required type="text" id="lname" name="sur" class="form-control" placeholder="นามสกุล" aria-describedby="basic-addon1">
       </div>
+
+      <p id = "alertName"></p>
       
 
           <!-- <div class="fonts1" style="font-size:15px; margin-top:20px;">
@@ -81,12 +83,17 @@
 
       <div class="input-group" style="margin-top:20px;">
          <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-envelope"></i></span>
-         <input required type= type="text" id="fname" name="email" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1">
+         <input required type= type="text" id="email" name="email" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1">
+      </div>
+
+      
+      <div>
+         <p id = "alertMail"></p>
       </div>
 
       <div class="input-group" style="margin-top:20px;">
          <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
-         <input required type="text" id="fname" name="user" class="form-control" placeholder="บัญชีผู้ใช้งาน" aria-describedby="basic-addon1">
+         <input required type="text" id="user" name="user" class="form-control" placeholder="บัญชีผู้ใช้งาน" aria-describedby="basic-addon1">
       </div>
 
       <div class="input-group" style="margin-top:20px;">
@@ -100,6 +107,8 @@
          <p class="help is-danger hide">This Password is not the same</p>
         
       </div>
+
+      <p id = "alertPass"></p>
     
 
 
@@ -118,7 +127,7 @@
       <center>
         <div class="fonts1" style="margin-top:20px;">
           <button type="button" class="btn btn-primary" style="background-color:#5D5E5C; border-color:#5D5E5C; margin-right:10px; width:100px;">ยกเลิก</button>
-          <button type="submit" class="btn btn-primary" style="background-color:#58B957; border-color:#58B957; width:100px; " onclick="submitform();">ยืนยัน</button>
+          <button type="button" class="btn btn-primary" style="background-color:#58B957; border-color:#58B957; width:100px; " onclick="checkForm();">ยืนยัน</button>
         </div>
       </center>
 
@@ -187,6 +196,29 @@
 
 <script>
  
+/*
+  Email
+*/
+function checkForm() {
+  var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  var name = ['^\u0E00-\u0E7Fa-zA-Z'];
+
+  var pass = document.getElementById("pass").value;
+  var conpass = document.getElementById("conpass").value;
+
+
+  if(reg.test(frm.email.value) == false){
+    document.getElementById("alertMail").innerHTML = "อีเมลล์ไม่ถูกต้อง";
+  }
+  if(pass != conpass){
+    document.getElementById("alertPass").innerHTML = "รหัสผ่านไม่ตรงกัน";
+  }
+  else{
+    alert("บันทึกข้อมูลสำเร็จ");
+    $('#formSendEmail').submit();
+  }
+  
+}
 
 function deletestaff(url) {
 

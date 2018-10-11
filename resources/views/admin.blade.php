@@ -66,7 +66,7 @@
   <div class="row" style="padding-top: 15px">
    <div class="col-md-3"></div>
    <div class="col-md-3" >
-    <img src="image_upload/{{$data[$i]['pic']}}"  style="width: 100%" >
+    <img src="image_upload/{{$data[$i]['pic']}}"  style="width: 100%;" >
     
   </div>
   <div class="col-md-4">
@@ -79,6 +79,7 @@
     <center>
     
 
+    <a  href="{{ route('editRegis',[ 'id'=>$data[$i]['_id']]) }}"  class="btn btn-warning"  style="background-color:#58B957; border-color:#58B957; width:100px; border-radius: 0px;">แก้ไข</a>
 
     <a  href="{{ route('check',[ 'id'=>$data[$i]['_id']]) }}"  class="btn btn-warning"  style="background-color:#58B957; border-color:#58B957; width:100px; border-radius: 0px;">เช็คชื่อ</a>
 

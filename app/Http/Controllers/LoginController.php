@@ -10,6 +10,14 @@ class LoginController extends Controller
 
 
 {
+
+  public function index(){
+    return view('login');
+}
+
+
+
+
   public function auth(Request $request){
 
     //dd($request);
@@ -21,10 +29,6 @@ class LoginController extends Controller
     'username' => $request['user'],
     'password' => $request['Pass'],
   );
-
-
-
-
 
    $cursor = $collection->findOne($Query);
   //  dd($cursor);
@@ -41,7 +45,7 @@ class LoginController extends Controller
     $name = $cursor["name"];
     return redirect()->route('user.index',["name"=>$name]);
   }else{
-    return redirect()->route('index');
+    return view('loginfailed');
   }
    //var_dump($cursor);
    // exit();

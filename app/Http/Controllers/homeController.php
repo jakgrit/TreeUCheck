@@ -15,10 +15,13 @@ class homeController extends Controller
    }
 
 
-   public function about(){
+   public function about(request $request){
+    //    dd($request);
+    $name = $request->session()->get('name');
     $collection = (new Mongo)->TreeUCheck->announce;
     $cursor = $collection->find();
-    return view('about');
+    return view('about',["data"=>$cursor->toArray(),"name"=>$name]);
+    // return view('about');
 
 }
 

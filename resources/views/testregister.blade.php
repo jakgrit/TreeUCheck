@@ -62,7 +62,7 @@
 
 
 <center>
-  <form action="{{ route('regSent') }}" method="post">
+  <form id = "formCheckin" name = "frm" action="{{ route('regSent') }}" method="post">
     {{ csrf_field() }}
     <input type="hidden" name="ID" value="{{ $id }}">
 
@@ -72,65 +72,40 @@
         <h5 class="fonts1"  style="text-align:left">ข้อมูลส่วนตัว</h5>
         <div class="input-group" style="margin-top:20px;">
                   <span class="input-group-addon" id="basic-addon1"><i class="fas fa-address-card"></i></span>
-                  <input required type="text" id="fname" name="name" class="form-control" placeholder="ชื่อ" aria-describedby="basic-addon1">
+                  <input required type="text" name="name" class="form-control" placeholder="ชื่อ" aria-describedby="basic-addon1">
         </div>
 
          <div class="input-group" style="margin-top:20px;">
          <span class="input-group-addon" id="basic-addon1"><i class="far fa-address-card"></i></span>
-         <input required type="text" id="fname" name="sur" class="form-control" placeholder="นามสกุล" aria-describedby="basic-addon1">
+         <input required type="text" name="sur" class="form-control" placeholder="นามสกุล" aria-describedby="basic-addon1">
 
       </div>
       <hr>
 <h5 class="fonts1"  style="text-align:left">ข้อมูลติดต่อ</h5>
        <div class="input-group" style="margin-top:20px;">
          <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-envelope"></i></span>
-         <input required type= type="text" id="fname" name="email" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1">
+         <input required type= type="text" name="email" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1">
       </div>
 
        <div class="input-group" style="margin-top:20px;">
          <span class="input-group-addon" id="basic-addon1"><i class="fas fa-map-marked-alt"></i></i></span>
-         <input required type= type="text" id="fname" name="add" class="form-control" placeholder="ที่อยู่" aria-describedby="basic-addon1">
+         <input required type= type="text" name="add" class="form-control" placeholder="ที่อยู่" aria-describedby="basic-addon1">
       </div>
 
        <div class="input-group" style="margin-top:20px;">
          <span class="input-group-addon" id="basic-addon1"><i class="fas fa-phone-volume"></i></i></span>
-         <input required type= type="text" id="fname" name="phone" class="form-control" placeholder="เบอร์โทรศัพท์" aria-describedby="basic-addon1">
+         <input required type= type="text" name="phone" class="form-control" placeholder="เบอร์โทรศัพท์" aria-describedby="basic-addon1">
       </div>
       
 
-
-
-
-<!-- 
-    <div style="margin-top:0px; display:inline-block; padding-right:70px; " align="right">
-      <div class="fonts1" style="font-size:15px; margin-top:20px; color:#383838;">
-        ชื่อ<input required type="text" id="fname" name="name" placeholder="" style="width:500px; margin-left:20px; height:30px;">
-      </div>
-
-      <div class="fonts1" style="font-size:15px; margin-top:20px;">
-        นามสกุล<input required type="text" id="fname" name="sur" placeholder="" style="width:500px; margin-left:20px; height:30px;">
-      </div>
-
-      <div class="fonts1" style="font-size:15px; margin-top:20px;">
-       Email<input required type="text" id="fname" name="email" placeholder="" style="width:500px; margin-left:20px; height:30px;">
-     </div>
-
-     <div class="fonts1" style="font-size:15px; margin-top:20px;">
-       ที่อยู่<input required type="text" id="fname" name="add" placeholder="" style="width:500px; margin-left:20px; height:30px;">
-     </div>
-
-
-
-     <div class="fonts1" style="font-size:15px; margin-top:20px;">
-       เบอร์โทรศัพท์<input required type="text" id="fname" name="phone" placeholder="" style="width:500px; margin-left:20px; height:30px;">
-     </div> -->
-
    </div>
+
+   <p id = "alertMail"></p>
 
 
    <div class="fonts1" style="margin-top:20px;">
     <button type="reset" class="btn btn-primary" style="background-color:#5D5E5C; border-color:#5D5E5C; margin-right:10px; width:100px;">ยกเลิก</button>
-    <button type="submit" class="btn btn-primary" style="background-color:#58B957; border-color:#58B957; width:100px; " onclick="submitform();">ยืนยัน</button>
+    <button type="button" class="btn btn-primary" style="background-color:#58B957; border-color:#58B957; width:100px; " onclick="checkForm();">ยืนยัน</button>
   </div>
 
   </div>
@@ -176,6 +151,17 @@
 
 <script>
 
+  function checkForm(){
+    console.log("Hello world!");
+    var mail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if(mail.test(frm.email.value) == false){
+      document.getElementById("alertMail").innerHTML = "อีเมลล์ไม่ถูกต้อง";
+      console.log('สวัสดี');
+    }else{
+      console.log('ผิด');
+      $('#formCheckin').submit();
+    }
+  }
 
   function deletestaff(url) {
 
@@ -185,7 +171,7 @@
 
     }
 
-
+  }
 
 
   </script>

@@ -33,11 +33,11 @@ Route::get('/', function (Request $request) {
 Route::post('send','mailController@send');
 Route::get('email','mailController@email')->name('email');
 
+Route::get('/login','LoginController@index')->name('login.index');
+
 
 
 Route::get('/check/{id}','checkController@index')->middleware('CheckAuth')->name('check');
-
-
 
 
 
@@ -94,6 +94,12 @@ Route::get('/regmember/update/status/{id}/{value?}','regmemberController@updateT
 Route::post('/regmember', 'LoginController@sent')->name('regMember');
 
 Route::post('/addregis', 'addRegisController@sent')->name('addRegis');
+
+/*
+	updateRegis
+*/
+Route::get('/editregister/{id}', 'addRegisController@update')->middleware('CheckAuth')->name('editRegis');
+Route::post('/editregister/{id}', 'addRegisController@editsend')->middleware('CheckAuth')->name('editsend');
 
 Route::post('/register', 'RegisterController@sent')->name('regSent');
 

@@ -119,8 +119,17 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title fonts1 " style="font-size:30px;" id="myModalLabel">เข้าสู่ระบบ</h4>
-        </div>
+          <center>
+						<h4 class="modal-title fonts1 " style="font-size:30px;" id="myModalLabel">เข้าสู่ระบบ</h4>
+					</center>
+				</div>
+				
+        <div class="modal-header">
+          <center>
+						<h4 class="modal-title fonts1 " style="font-size:20px;" id="myModalLabel">สำหรับผู้จัดการระบบ</h4>
+					</center>
+				</div>
+
         <div class="modal-body">
           <div class="form-group">
             <label for="name" class="cols-sm-2 control-label fonts1" style="letter-spacing: 4px; ">Username</label>
@@ -254,6 +263,8 @@
 					}
 				}
 	</script> -->
+
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="{{asset('js/bootstrap.min.js')}}"></script>

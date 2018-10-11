@@ -6,7 +6,7 @@
         <a href="{{ route('index') }}" class="w3-bar-item w3-button fonts1 " style="text-decoration: none; color:#00C7E8; font-size:18px;">หน้าแรก</a>
         <a href="{{ route('about') }}" class="w3-bar-item w3-button fonts1 " style="text-decoration: none; color:#00C7E8; font-size:18px;">เกี่ยวกับเรา</a>
         <a href="{{ route('email') }}" class="w3-bar-item w3-button fonts1 " style="text-decoration: none; color:#00C7E8; font-size:18px;">ติดต่อเรา</a>
-        <a href="#menu" class="w3-bar-item w3-button fonts1 li-manu"  data-toggle="modal" data-target="#myModal"
+        <a href="{{ route('login') }}" class="w3-bar-item w3-button fonts1 li-manu" 
         style="text-decoration:none; font-size:18PX;"> <span class="glyphicon glyphicon-log-in" aria-hidden="true" ></span> เข้าสู่ระบบ</a>
       </div>
     </div>
