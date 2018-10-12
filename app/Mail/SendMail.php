@@ -29,6 +29,6 @@ class SendMail extends Mailable
      */
     public function build(request $request)
     {
-        return $this->view('mail',['msg'=>$request->message])->to('jakgritframe@gmail.com')->subject($request->head);
+        return $this->view('mail',['msg'=>$request->message])->to('59160002@go.buu.ac.th')->subject($request->head);
     }
 }
